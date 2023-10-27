@@ -1,10 +1,10 @@
 <html>
 <head>
-  <title>Sally's Products</title>
+  <title>Sally'sProducts</title>
 </head>
 <body>
   <div id="product-list">
-    <!-- Product descriptions will be displayed here -->
+    <!-- Product descriptions and buttons will be displayed here -->
   </div>
 
   <script>
@@ -24,18 +24,29 @@
 
     // Create an array of products
     const products = [
-      new Shed("Large House Shed", 799.99),
+      new Shed("Large Garden Shed", 799.99),
       new Shed("Small Storage Shed", 399.99),
       new PetRock("Rocky", 9.99),
     ];
 
-    // Display descriptions for all products
+    // Display descriptions and buttons for all products
     const productListDiv = document.getElementById("product-list");
 
     for (const product of products) {
+      const productContainer = document.createElement("div");
+
       const productDescription = document.createElement("p");
       productDescription.textContent = product.getDescription();
-      productListDiv.appendChild(productDescription);
+
+      const purchaseButton = document.createElement("button");
+      purchaseButton.textContent = "Purchase";
+      purchaseButton.addEventListener("click", () => {
+        alert(`You've purchased a ${product.name} for $${product.price.toFixed(2)}.`);
+      });
+
+      productContainer.appendChild(productDescription);
+      productContainer.appendChild(purchaseButton);
+      productListDiv.appendChild(productContainer);
     }
   </script>
 </body>
