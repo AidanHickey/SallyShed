@@ -5,22 +5,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sally's Sheds: Login</title>
-
+</head>
 <body>
-    <div class="Login_box">
-            <form>
-                <input type="search" id="webSearch" name="search"/>
-
-                    <button>Search</button>
-
-            </form>
-    </div>
-</body>
-
-        </head>
-        <style>
-             body {
+    <style>
+        body {
             background-color: rgb(165, 165, 251);
             text-align: center;
         }
-        </style>
+    </style>
+    <center><h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</center>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get the entered username and password
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Fetch the text file with stored credentials
+            fetch('users.txt')
+                .then(response => response.text())
+                .then(data => {
+                    // Split the text file content into lines
+                    const lines = data.split('\n');
+
+                    // Check if the entered username and password match any line in the text file
+                    const validUser = lines.some(line => {
+                        const [storedUsername, storedPassword] = line.split(':');
+                        return username === storedUsername && password === storedPassword;
+                    });
+
+                    // Display messages on the website
+                    const messageElement = document.getElementById('message');
+                    if (validUser) {
+                        messageElement.innerText = 'Login successful';
+                    } else {
+                        messageElement.innerText = 'Login failed. Please check your credentials.';
+                    }
+                })
+                .catch(error => {
+                    console.error('An error occurred:', error);
+                });
+        });
+    </script>
+</body>
+</html>
