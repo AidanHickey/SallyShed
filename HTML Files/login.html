@@ -35,7 +35,7 @@
             const password = document.getElementById('password').value;
 
             // Fetch the text file with stored credentials
-            fetch('users.txt')
+            fetch('logins.txt')
                 .then(response => response.text())
                 .then(data => {
                     // Split the text file content into lines
