@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Products</title>
+</head>
+<body>
+  <div id="product-list">
+    <!-- Product descriptions will be displayed here -->
+  </div>
+
+  <script>
+    class Product {
+      constructor(name, price) {
+        this.name = name;
+        this.price = price;
+      }
+
+      getDescription() {
+        return `This is a ${this.constructor.name} named ${this.name}. It costs $${this.price.toFixed(2)}.`;
+      }
+    }
+
+    class Shed extends Product {}
+    class PetRock extends Product {}
+
+    // Create an array of products
+    const products = [
+      new Shed("Large Garden Shed", 799.99),
+      new Shed("Small Storage Shed", 399.99),
+      new PetRock("Rocky", 9.99),
+    ];
+
+    // Display descriptions for all products
+    const productListDiv = document.getElementById("product-list");
+
+    for (const product of products) {
+      const productDescription = document.createElement("p");
+      productDescription.textContent = product.getDescription();
+      productListDiv.appendChild(productDescription);
+    }
+  </script>
+</body>
+</html>
