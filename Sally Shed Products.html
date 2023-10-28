@@ -1,10 +1,16 @@
 <html>
 <head>
-  <title>Sally'sProducts</title>
+  <title>Products</title>
 </head>
 <body>
   <div id="product-list">
-    <!-- Product descriptions and buttons will be displayed here -->
+    <!-- Product descriptions, prices, and "Add to Cart" buttons will be displayed here -->
+  </div>
+  <div id="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items">
+      <!-- Items added to the cart will be displayed here -->
+    </ul>
   </div>
 
   <script>
@@ -29,7 +35,9 @@
       new PetRock("Rocky", 9.99),
     ];
 
-    // Display descriptions and buttons for all products
+    const cartItems = [];
+
+    // Display descriptions, prices, and "Add to Cart" buttons for all products
     const productListDiv = document.getElementById("product-list");
 
     for (const product of products) {
@@ -38,15 +46,33 @@
       const productDescription = document.createElement("p");
       productDescription.textContent = product.getDescription();
 
-      const purchaseButton = document.createElement("button");
-      purchaseButton.textContent = "Purchase";
-      purchaseButton.addEventListener("click", () => {
-        alert(`You've purchased a ${product.name} for $${product.price.toFixed(2)}.`);
+      const priceLabel = document.createElement("p");
+      priceLabel.textContent = `Price: $${product.price.toFixed(2)}`;
+
+      const addToCartButton = document.createElement("button");
+      addToCartButton.textContent = "Add to Cart";
+      addToCartButton.addEventListener("click", () => {
+        cartItems.push(product);
+        updateCart();
       });
 
       productContainer.appendChild(productDescription);
-      productContainer.appendChild(purchaseButton);
+      productContainer.appendChild(priceLabel);
+      productContainer.appendChild(addToCartButton);
       productListDiv.appendChild(productContainer);
+    }
+
+    // Update the cart display
+    const cartDiv = document.getElementById("cart");
+    const cartItemsList = document.getElementById("cart-items");
+
+    function updateCart() {
+      cartItemsList.innerHTML = "";
+      for (const item of cartItems) {
+        const cartItem = document.createElement("li");
+        cartItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItemsList.appendChild(cartItem);
+      }
     }
   </script>
 </body>
