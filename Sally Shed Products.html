@@ -36,6 +36,7 @@
     ];
 
     const cartItems = [];
+    const cartLimit = 3;
 
     // Display descriptions, prices, and "Add to Cart" buttons for all products
     const productListDiv = document.getElementById("product-list");
@@ -52,8 +53,14 @@
       const addToCartButton = document.createElement("button");
       addToCartButton.textContent = "Add to Cart";
       addToCartButton.addEventListener("click", () => {
-        cartItems.push(product);
-        updateCart();
+        if (cartItems.length < cartLimit) {
+          cartItems.push(product);
+          updateCart();
+          if (cartItems.length >= cartLimit) {
+            // Disable the button when the cart limit is reached
+            addToCartButton.disabled = true;
+          }
+        }
       });
 
       productContainer.appendChild(productDescription);
