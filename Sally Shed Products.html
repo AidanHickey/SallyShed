@@ -1,6 +1,7 @@
 <html>
 <head>
   <title>Products</title>
+  <script src="cart.js"></script>
 </head>
 <body>
   <div id="product-list">
@@ -11,6 +12,7 @@
     <ul id="cart-items">
       <!-- Items added to the cart will be displayed here -->
     </ul>
+    <p id="cart-total">Total: $0.00</p> <!-- Display total price here -->
   </div>
 
   <script>
@@ -35,7 +37,6 @@
       new PetRock("Rocky", 9.99),
     ];
 
-    const cartItems = [];
     const cartLimit = 3;
 
     // Display descriptions, prices, and "Add to Cart" buttons for all products
@@ -53,13 +54,10 @@
       const addToCartButton = document.createElement("button");
       addToCartButton.textContent = "Add to Cart";
       addToCartButton.addEventListener("click", () => {
-        if (cartItems.length < cartLimit) {
-          cartItems.push(product);
+        if (addToCart(product)) { // Call the addToCart function from cart.js
           updateCart();
-          if (cartItems.length >= cartLimit) {
-            // Disable the button when the cart limit is reached
-            addToCartButton.disabled = true;
-          }
+        } else {
+          alert("Cart limit reached");
         }
       });
 
@@ -70,17 +68,33 @@
     }
 
     // Update the cart display
-    const cartDiv = document.getElementById("cart");
-    const cartItemsList = document.getElementById("cart-items");
-
     function updateCart() {
+      const cartItemsList = document.getElementById("cart-items");
+      const cartTotal = document.getElementById("cart-total");
+
       cartItemsList.innerHTML = "";
-      for (const item of cartItems) {
+      for (const item of cart.items) {
         const cartItem = document.createElement("li");
         cartItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
         cartItemsList.appendChild(cartItem);
       }
+
+      cartTotal.textContent = `Total: $${calculateTotal()}`;
     }
+    const cartSummaryList = document.getElementById("cart-summary-items");
+    cartSummaryList.innerHTML = "";
+    const itemQuantities = getItemQuantities();
+    for (const [itemName, quantity] of Object.entries(itemQuantities)) {
+      const itemSummary = document.createElement("li");
+      itemSummary.textContent = `${itemName} x${quantity}`;
+      cartSummaryList.appendChild(itemSummary);
+    }
+
+    // Update total
+    const cartTotal = document.createElement("p");
+    cartTotal.textContent = `Total: $${calculateTotal()}`;
+    cartItemsList.appendChild(cartTotal);
+    
   </script>
 </body>
 </html>
