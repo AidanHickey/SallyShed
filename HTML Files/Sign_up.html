@@ -1,0 +1,89 @@
+<!-- This is the sign up page for the html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign up page</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #box {
+            width: 300px;
+            margin: 0 auto;
+            background-color: lightblue;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #888;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 1000px;
+            padding: 10px;
+        }
+
+        legend {
+            font:large;
+            color:red;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], input[type="confirm_password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: purple;
+            border-radius: 50px;
+            transition: 0.7s;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <form>
+        <fieldset>
+            <legend>Sign up</legend>
+            <input type="text" name="fname" placeholder="First name" required/>
+            <br>
+            <input type="text" name="lname" placeholder="Last name" required/>
+            <br>
+
+            <!--Drop down menu for age(day,month, year)
+            To be completed later
+            -->
+
+            <input type="email" name="email" placeholder="Email" required/>
+            <br>
+            <input type="password" name="password" placeholder="Password" required/>
+            <br>
+            <input type="confirm_password" name="comf_password" placeholder="Confirm password" required/>
+            <br>
+            <input type="submit" value="Sign up"/>
+            <input type="reset" value="Reset"/>
+        </fieldset>
+    </form>
+</div>
+</script>
+</body>
+</html>
