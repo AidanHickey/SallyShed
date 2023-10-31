@@ -9,57 +9,77 @@
 <body>
     <style>
         body {
-            background-color: rgb(165, 165, 251);
+            background-image: url(https://www.northwoodoutdoor.com/wp-content/uploads/home/quality-storage-sheds-for-sale-in-wisconsin-northwood-outdoor-scaled.jpg);
+            background-size:auto;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
             text-align: center;
         }
+        #box {
+            width: 300px;
+            margin: 0 auto;
+            background-color: lightblue;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #888;
+            transform: translate(0,75%)
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 1000px;
+            padding: 10px;
+        }
+
+        legend {
+            font:large;
+            color:red;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], input[type="confirm_password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: purple;
+            border-radius: 50px;
+            transition: 0.7s;
+        }
     </style>
-    <center><h2>Login</h2>
-    <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+</head>
+<body>
+<div id="box">
+    <form>
+        <fieldset>
+            <legend>Login</legend>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-
-        <input type="submit" value="Login">
+            <input type="email" name="email" placeholder="Email" required/>
+            <br>
+            <input type="password" name="password" placeholder="Password" required/>
+            <br>
+            <input type="submit" value="Login"/>
+            <input type="reset" value="Reset Password"/>
+        </fieldset>
     </form>
-    <label for="forget">Forgot Login?</label>
-</center>
-    <p id="message"></p>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get the entered username and password
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Fetch the text file with stored credentials
-            fetch('logins.txt')
-                .then(response => response.text())
-                .then(data => {
-                    // Split the text file content into lines
-                    const lines = data.split('\n');
-
-                    // Check if the entered username and password match any line in the text file
-                    const validUser = lines.some(line => {
-                        const [storedUsername, storedPassword] = line.split(':');
-                        return username === storedUsername && password === storedPassword;
-                    });
-
-                    // Display messages on the website
-                    const messageElement = document.getElementById('message');
-                    if (validUser) {
-                        messageElement.innerText = 'Login successful';
-                    } else {
-                        messageElement.innerText = 'Login failed. Please check your credentials.';
-                    }
-                })
-                .catch(error => {
-                    console.error('An error occurred:', error);
-                });
-        });
-    </script>
+</div>
+</script>
 </body>
 </html>
