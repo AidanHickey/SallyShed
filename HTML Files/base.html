@@ -62,15 +62,28 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns of equal size */
   grid-template-rows: repeat(2, 100px);  /* Two rows, each 100px tall */
-  gap: 10px; /* 10px gap between grid items */
+  gap: 50px; /* 10px gap between grid items */
 }
 
 .grid-item {
-  background-color: #3498db;
+  background-color: blue;
+  margin:80px;
   color: white;
   padding: 20px;
   font: 200px;
   text-align: center;
+}
+
+.shed_text {
+    font:40px;
+    padding:-20px;
+    margin: -10px;
+}
+
+.pet_text {
+    font:40px;
+    padding:-20px;
+    margin: -10px;
 }
 
 </style>
@@ -92,8 +105,8 @@
 </div>
 
 <div class="grid-container">
-    <div class="grid-item">Sheds</div>
-    <div class="grid-item">Pet Rocks</div>
+    <div class="grid-item"><h4 class ="shed_text">Sheds</h3></div>
+    <div class="grid-item"><h4 class ="pet_text">Pet Rocks</h4></div>
 </div>
 
 </body>
