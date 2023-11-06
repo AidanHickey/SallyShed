@@ -1,0 +1,58 @@
+<!-- thankyou.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You</title>
+</head>
+<body>
+    <h1>Thank You for Your Order!</h1>
+    
+<!-- Cart Details -->
+<div id="cart-details">
+    <h2>Cart Details</h2>
+    <ul id="cart-list"></ul>
+    <p id="cart-subtotal"></p>
+    <p id="cart-tax"></p>
+    <p id="cart-shipping"></p>
+    <p id="cart-total"></p>
+    <p id="order-number"></p>
+</div>
+
+<!-- Billing Address -->
+<div id="billing-address">
+    <h2>Billing Address</h2>
+    <p id="full-name"></p>
+    <p id="address"></p>
+    <p id="city-state-zip"></p>
+</div>
+
+<!-- Payment Information -->
+<div id="payment-info">
+    <h2>Payment</h2>
+    <p id="card-name"></p>
+    <p id="card-number"></p>
+    <p id="exp-cvv"></p>
+</div>
+
+<script>
+    // Retrieve order details from the URL
+    const params = new URLSearchParams(window.location.search);
+
+    // Update the order details in the thankyou page
+    const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    document.getElementById("cart-list").textContent = cartItems.map(item => `${item.name} - $${item.price.toFixed(2)}`).join('\n');
+    document.getElementById("cart-subtotal").textContent = `Subtotal: $${params.get("subtotal")}`;
+    document.getElementById("cart-tax").textContent = `Tax (7.25%): $${params.get("tax")}`;
+    document.getElementById("cart-shipping").textContent = `Shipping: $${params.get("shippingCost")}`;
+    document.getElementById("cart-total").textContent = `Total: $${params.get("total")}`;
+    document.getElementById("order-number").textContent = "Order #: " + params.get("orderNumber");
+    document.getElementById("full-name").textContent = "Full Name: " + params.get("fullName");
+    document.getElementById("address").textContent = "Address: " + params.get("address");
+    document.getElementById("city-state-zip").textContent = "City: " + params.get("city") + ", State: " + params.get("state") + ", Zip: " + params.get("zip");
+    document.getElementById("card-name").textContent = "Name on Card: " + params.get("cardName");
+    document.getElementById("card-number").textContent = "Credit Card Number: " + params.get("cardNumber");
+    document.getElementById("exp-cvv").textContent = "Exp Month: " + params.get("expMonth") + ", Exp Year: " + params.get("expYear") + ", CVV: " + params.get("cvv");
+</script>
+
+</body>
+</html>

@@ -1,100 +1,159 @@
+<!--sallyShedProducts.html-->
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Products</title>
-  <script src="cart.js"></script>
+    <title>Products</title>
+    <script src="cart.js"></script>
 </head>
 <body>
-  <div id="product-list">
-    <!-- Product descriptions, prices, and "Add to Cart" buttons will be displayed here -->
-  </div>
-  <div id="cart">
-    <h2>Shopping Cart</h2>
-    <ul id="cart-items">
-      <!-- Items added to the cart will be displayed here -->
-    </ul>
-    <p id="cart-total">Total: $0.00</p> <!-- Display total price here -->
-  </div>
+    <div id="product-list">
+        <!-- Product descriptions, prices, and "Add to Cart" buttons will be displayed here -->
+    </div>
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+            <!-- Items added to the cart will be displayed here -->
+        </ul>
+        <p id="cart-total">Total: $0.00</p> <!-- Display total price here -->
+    </div>
 
-  <script>
-    class Product {
-      constructor(name, price) {
-        this.name = name;
-        this.price = price;
-      }
+    <!-- Add this button to sallyshedproducts.html -->
+    <button id="checkoutButton">Proceed to Checkout</button>
+    <!-- Add this button to sallyShedProducts.html -->
+    <button id="emptyCartButton">Empty Cart</button>
 
-      getDescription() {
-        return `This is a ${this.constructor.name} named ${this.name}. It costs $${this.price.toFixed(2)}.`;
-      }
-    }
 
-    class Shed extends Product {}
-    class PetRock extends Product {}
 
-    // Create an array of products
-    const products = [
-      new Shed("Large Garden Shed", 799.99),
-      new Shed("Small Storage Shed", 399.99),
-      new PetRock("Rocky", 9.99),
-    ];
-
-    const cartLimit = 3;
-
-    // Display descriptions, prices, and "Add to Cart" buttons for all products
-    const productListDiv = document.getElementById("product-list");
-
-    for (const product of products) {
-      const productContainer = document.createElement("div");
-
-      const productDescription = document.createElement("p");
-      productDescription.textContent = product.getDescription();
-
-      const priceLabel = document.createElement("p");
-      priceLabel.textContent = `Price: $${product.price.toFixed(2)}`;
-
-      const addToCartButton = document.createElement("button");
-      addToCartButton.textContent = "Add to Cart";
-      addToCartButton.addEventListener("click", () => {
-        if (addToCart(product)) { // Call the addToCart function from cart.js
-          updateCart();
-        } else {
-          alert("Cart limit reached");
-        }
-      });
-
-      productContainer.appendChild(productDescription);
-      productContainer.appendChild(priceLabel);
-      productContainer.appendChild(addToCartButton);
-      productListDiv.appendChild(productContainer);
-    }
-
-    // Update the cart display
-    function updateCart() {
-      const cartItemsList = document.getElementById("cart-items");
-      const cartTotal = document.getElementById("cart-total");
-
-      cartItemsList.innerHTML = "";
-      for (const item of cart.items) {
-        const cartItem = document.createElement("li");
-        cartItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-        cartItemsList.appendChild(cartItem);
-      }
-
-      cartTotal.textContent = `Total: $${calculateTotal()}`;
-    }
-    const cartSummaryList = document.getElementById("cart-summary-items");
-    cartSummaryList.innerHTML = "";
-    const itemQuantities = getItemQuantities();
-    for (const [itemName, quantity] of Object.entries(itemQuantities)) {
-      const itemSummary = document.createElement("li");
-      itemSummary.textContent = `${itemName} x${quantity}`;
-      cartSummaryList.appendChild(itemSummary);
-    }
-
-    // Update total
-    const cartTotal = document.createElement("p");
-    cartTotal.textContent = `Total: $${calculateTotal()}`;
-    cartItemsList.appendChild(cartTotal);
+    <script>
+      // Checkout function
+      function checkout() {
+        // Get the form input data (e.g., name, address, card info)
+        const fullName = document.getElementById("fname").value;
+        const address = document.getElementById("adr").value;
+        const city = document.getElementById("city").value;
+        const state = document.getElementById("state").value;
+        const zip = document.getElementById("zip").value;
+        const cardName = document.getElementById("cname").value;
+        const cardNumber = document.getElementById("ccnum").value;
+        const expMonth = document.getElementById("expmonth").value;
+        const expYear = document.getElementById("expyear").value;
+        const cvv = document.getElementById("cvv").value;
     
-  </script>
+        // Retrieve cart items from localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    
+        // Generate a unique order number
+        const orderNumber = generateOrderNumber(existingOrderNumbers);
+    
+        // Pass cart items to the checkout page
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    
+        // Redirect to the checkout page with the order details
+        window.location.href = `checkout.html?orderNumber=${orderNumber}&fullName=${encodeURIComponent(fullName)}&address=${encodeURIComponent(address)}&city=${city}&state=${state}&zip=${zip}&cardName=${encodeURIComponent(cardName)}&cardNumber=${cardNumber}&expMonth=${expMonth}&expYear=${expYear}&cvv=${cvv}`;
+    
+        // Prevent the form from submitting via HTML's default behavior
+        return false;
+      }
+    
+
+
+
+
+        class Product {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            getDescription() {
+                return `This is a ${this.constructor.name} named ${this.name}. It costs $${this.price.toFixed(2)}.`;
+            }
+        }
+
+        class Shed extends Product { }
+        class PetRock extends Product { }
+
+        // Create an array of products
+        const products = [
+            new Shed("Large Garden Shed", 799.99),
+            new Shed("Small Storage Shed", 399.99),
+            new PetRock("Rocky", 9.99),
+        ];
+
+        const cartLimit = 3;
+
+        // Function to display the products
+        function displayProducts() {
+            const productListDiv = document.getElementById("product-list");
+
+            for (const product of products) {
+                const productContainer = document.createElement("div");
+
+                const productDescription = document.createElement("p");
+                productDescription.textContent = product.getDescription();
+
+                const priceLabel = document.createElement("p");
+                priceLabel.textContent = `Price: $${product.price.toFixed(2)}`;
+
+                const addToCartButton = document.createElement("button");
+                addToCartButton.textContent = "Add to Cart";
+                addToCartButton.addEventListener("click", () => {
+                    if (addToCart(product)) { // Call the addToCart function from cart.js
+                        updateCart();
+                    } else {
+                        alert("Cart limit reached");
+                    }
+                });
+
+                productContainer.appendChild(productDescription);
+                productContainer.appendChild(priceLabel);
+                productContainer.appendChild(addToCartButton);
+                productListDiv.appendChild(productContainer);
+            }
+        }
+
+        // Call the function to display products when the page loads
+        window.onload = displayProducts;
+
+        // Update the cart display
+        function updateCart() {
+            const cartItemsList = document.getElementById("cart-items");
+            const cartTotal = document.getElementById("cart-total");
+
+            cartItemsList.innerHTML = "";
+            for (const item of cart.items) {
+                const cartItem = document.createElement("li");
+                cartItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+
+                cartItemsList.appendChild(cartItem);
+            }
+
+            cartTotal.textContent = `Total: $${calculateTotal()}`;
+        }
+
+        // Add this button to sallyshedproducts.html
+        const checkoutButton = document.getElementById("checkoutButton");
+        checkoutButton.addEventListener("click", () => {
+            // Redirect to the checkout page with cart items
+            window.location.href = "checkout.html";
+        });
+    </script>
+<script>
+  // Function to empty the cart
+  function emptyCart() {
+    // Clear the items in the cart
+    cart.items = [];
+    // Update the cart in localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cart.items));
+    // Update the cart display
+    updateCart();
+  }
+
+  // Add a click event listener to the "Empty Cart" button
+  const emptyCartButton = document.getElementById("emptyCartButton");
+  emptyCartButton.addEventListener("click", emptyCart);
+</script>
+
+
 </body>
 </html>

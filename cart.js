@@ -1,7 +1,9 @@
+
 // cart.js
 
+// Initialize the cart with items from localStorage (if available)
 const cart = {
-  items: [],
+  items: JSON.parse(localStorage.getItem('cartItems')) || [],
   cartLimit: 3,
   taxRate: 0.0725, // 7.25% tax rate
   shippingCost: 10000,
@@ -11,9 +13,23 @@ const cart = {
 function addToCart(product) {
   if (cart.items.length < cart.cartLimit) {
     cart.items.push(product);
+    // Update the cart in localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cart.items));
     return true; // Product added successfully
   } else {
     return false; // Cart limit reached
+  }
+}
+
+// Function to remove an item from the cart
+function removeFromCart(index) {
+  if (index >= 0 && index < cart.items.length) {
+    cart.items.splice(index, 1);
+    // Update the cart in localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cart.items));
+    return true; // Product removed successfully
+  } else {
+    return false; // Invalid index
   }
 }
 
