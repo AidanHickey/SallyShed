@@ -1,0 +1,1 @@
+Hey so everyone I submited code that works in Scenebuilder it's supposed to make building the user interface a lot easier while maintaining consistency throughout the app. There exist some method for getting the java/javaFX code from this that I was mentioned to by some other  students who took this class previously in the summer and are now seniors. 
