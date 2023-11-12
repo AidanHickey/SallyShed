@@ -19,7 +19,7 @@
                <children>
                   <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Sallystuff/home%20Icon.jpg" />
+                        <Image url="@Sallystuff/home%20Icon.jpg" />
                      </image>
                   </ImageView>
                   <Label layoutX="62.0" layoutY="27.0" prefHeight="25.0" prefWidth="90.0" text="Home" textFill="#87ae73">
@@ -36,7 +36,7 @@
                <children>
                   <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Sallystuff/cart.jpg" />
+                        <Image url="@Sallystuff/cart.jpg" />
                      </image>
                   </ImageView>
                   <Label layoutX="63.0" layoutY="27.0" prefHeight="25.0" prefWidth="90.0" text="Products" textFill="#87ae73">
@@ -54,7 +54,7 @@
                <children>
                   <ImageView fitHeight="62.0" fitWidth="59.0" layoutX="7.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Sallystuff/shipping.jpg" />
+                        <Image url="@Sallystuff/shipping.jpg" />
                      </image>
                   </ImageView>
                   <Label layoutX="66.0" layoutY="27.0" prefHeight="25.0" prefWidth="90.0" text="Checkout">
@@ -72,7 +72,7 @@
                <children>
                   <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Sallystuff/log%20out.jpg" />
+                        <Image url="@Sallystuff/log%20out.jpg" />
                      </image>
                   </ImageView>
                   <Label layoutX="67.0" layoutY="28.0" prefHeight="25.0" prefWidth="90.0" text="Log Out" textFill="#87ae73">
@@ -96,22 +96,22 @@
                <children>
                   <ImageView fitHeight="137.0" fitWidth="1113.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Sallystuff/Top.png" />
+                        <Image url="@Sallystuff/Top.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="137.0" fitWidth="1113.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Sallystuff/Top.png" />
+                        <Image url="@Sallystuff/Top.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="137.0" fitWidth="366.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Sallystuff/Top.png" />
+                        <Image url="@Sallystuff/Top.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="144.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Sallystuff/sun.png" />
+                        <Image url="@Sallystuff/sun.png" />
                      </image>
                   </ImageView>
                </children>
