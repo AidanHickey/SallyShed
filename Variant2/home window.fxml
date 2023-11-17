@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1290.0" style="-fx-background-color: #EEA47F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <left>
@@ -118,11 +119,15 @@
                   </ImageView>
                </children>
             </HBox>
-            <TextArea blendMode="MULTIPLY" prefHeight="160.0" prefWidth="960.0" promptText="Summary" text="Welcome To Sally's Sheds and Pet Rocks&#10;Your Number One Stop For Sheds and Pet Rocks, so you never feel lonely" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </TextArea>
+            <TextFlow>
+               <children>
+                  <TextArea blendMode="MULTIPLY" prefHeight="160.0" prefWidth="960.0" promptText="Summary" text="Welcome To Sally's Sheds and Pet Rocks&#10;Your Number One Stop For Sheds and Pet Rocks, so you never feel lonely" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </TextFlow>
             <Accordion />
          </children>
       </VBox>
