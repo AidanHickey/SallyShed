@@ -17,7 +17,7 @@
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0" />
-                        <TextField text="Username" />
+                        <TextField onAction="#userName" text="Username" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
@@ -26,7 +26,7 @@
                         <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <TextField text="Password" />
+                              <TextField onAction="#passWord" text="Password" />
                            </children>
                         </HBox>
                      </children>
@@ -37,7 +37,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" />
                   <HBox prefHeight="100.0" prefWidth="200.0" />
-                  <Button mnemonicParsing="false" onAction="#buttonOnAction" text="Sign Up" />
+                  <Button mnemonicParsing="false" text="Sign Up" />
                </children>
             </HBox>
          </children>
