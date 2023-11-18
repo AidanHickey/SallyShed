@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" type="BorderPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -17,16 +17,26 @@
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0" />
-                        <TextField onAction="#userName" text="Username" />
+                        <TextField onAction="#userName" prefHeight="26.0" prefWidth="374.0" text="Username" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" />
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <TextField onAction="#passWord" prefHeight="26.0" prefWidth="427.0" text="Password" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <TextField onAction="#passWord" text="Password" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" />
                            </children>
                         </HBox>
                      </children>
@@ -37,10 +47,10 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" />
                   <HBox prefHeight="100.0" prefWidth="200.0" />
-                  <Button mnemonicParsing="false" text="Sign Up" />
+                  <Button mnemonicParsing="false" onAction="#buttonAction" text="Sign Up" />
                </children>
             </HBox>
          </children>
       </VBox>
    </center>
-</BorderPane>
+</fx:root>
