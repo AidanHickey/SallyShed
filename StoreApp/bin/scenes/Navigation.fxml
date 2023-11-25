@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane styleClass="menu-container" stylesheets="@styles/navigation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.MenuController">
+   <children>
+      <VBox alignment="CENTER" spacing="10.0" styleClass="menu-list" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="home" onMouseClicked="#go" prefHeight="80.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="23.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/home%20Icon.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="62.0" layoutY="27.0" mouseTransparent="true" prefHeight="25.0" prefWidth="90.0" text="Home">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="menu-item" />
+                  <String fx:value="home" />
+               </styleClass>
+            </Pane>
+            <Pane fx:id="products" onMouseClicked="#go" prefHeight="80.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="23.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cart.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="63.0" layoutY="27.0" mouseTransparent="true" prefHeight="25.0" prefWidth="90.0" text="Products">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="menu-item" />
+                  <String fx:value="products" />
+               </styleClass>
+            </Pane>
+            <Pane fx:id="logout" onMouseClicked="#go" prefHeight="80.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/log%20out.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="67.0" layoutY="28.0" mouseTransparent="true" prefHeight="25.0" prefWidth="90.0" text="Log Out" textFill="#87ae73">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button maxWidth="151.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="83.0" prefWidth="151.0" style="-fx-background-color: rgba(0,0,0,0);" text="Button" textFill="TRANSPARENT" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="menu-item" />
+                  <String fx:value="logout" />
+               </styleClass>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

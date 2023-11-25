@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1290.0" style="-fx-background-color: #EEA47F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0" spacing="10.0" style="-fx-background-color: #00539C;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="80.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sallystuff/home%20Icon.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="62.0" layoutY="27.0" prefHeight="25.0" prefWidth="90.0" text="Home" textFill="#87ae73">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #00539C;">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sallystuff/cart.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="63.0" layoutY="27.0" prefHeight="25.0" prefWidth="90.0" text="Products" textFill="#87ae73">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button maxWidth="151.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="151.0" style="-fx-background-color: rgba(0,0,0,0);" text="Button" textFill="TRANSPARENT" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #EEA47F;">
+               <children>
+                  <ImageView fitHeight="62.0" fitWidth="59.0" layoutX="7.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sallystuff/shipping.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="66.0" layoutY="27.0" prefHeight="25.0" prefWidth="90.0" text="Checkout">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button maxWidth="151.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="151.0" style="-fx-background-color: rgba(0,0,0,0);" text="Button" textFill="TRANSPARENT" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sallystuff/log%20out.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="67.0" layoutY="28.0" prefHeight="25.0" prefWidth="90.0" text="Log Out" textFill="#87ae73">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button maxWidth="151.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="151.0" style="-fx-background-color: rgba(0,0,0,0);" text="Button" textFill="TRANSPARENT" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Pane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="133.0" prefWidth="1140.0">
+               <children>
+                  <ImageView fitHeight="137.0" fitWidth="1113.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sallystuff/Top.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="137.0" fitWidth="1113.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sallystuff/Top.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="137.0" fitWidth="366.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sallystuff/Top.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="144.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Sallystuff/sun.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <VBox prefHeight="669.0" prefWidth="1140.0">
+               <children>
+                  <HBox prefHeight="585.0" prefWidth="1140.0" />
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                      <Button fx:id="backToProducts" mnemonicParsing="false" onMouseClicked="#backToProductsClick" text="Back" />
+                        <Button fx:id="checkOut" mnemonicParsing="false" onMouseClicked="#checkOutClicked" text="CheckOut" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,22 @@
+.menu-container {
+	-fx-background-color:  #00539C;
+}
+
+.menu-list {
+	
+}
+
+.menu-item {
+}
+
+.menu-item .label{
+	-fx-text-fill: white;
+}
+
+.menu-item.current {
+	-fx-background-color: #EEA47F;
+}
+
+.menu-item.current .label{
+	-fx-text-fill: black;
+}

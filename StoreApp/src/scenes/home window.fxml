@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane prefHeight="800.0" prefWidth="1290.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.HomeController">
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: #EEA47F;" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+         <content>
+            <VBox style="-fx-background-color: transparent;">
+               <children>
+                  <HBox prefHeight="133.0" prefWidth="1140.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <ImageView fitHeight="137.0" fitWidth="1113.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Top.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="137.0" fitWidth="1113.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Top.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="137.0" fitWidth="366.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Top.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="144.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/sun.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <TextFlow>
+                     <children>
+                        <TextArea blendMode="MULTIPLY" editable="false" prefHeight="160.0" prefWidth="960.0" promptText="Summary" text="Welcome To Sally's Sheds and Pet Rocks&#10;Your Number One Stop For Sheds and Pet Rocks, so you never feel lonely" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </TextFlow>
+                  <Pane>
+                     <children>
+                        <ButtonBar layoutX="1049.0" layoutY="443.0">
+                          <buttons>
+                              <Button mnemonicParsing="false" onMouseClicked="#switchToProducts" text="Forward" />
+                          </buttons>
+                        </ButtonBar>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <fx:include source="Navigation.fxml" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
