@@ -1,0 +1,82 @@
+package application.controllers;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import application.SceneController;
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
+
+public class HomeController implements Initializable {
+	
+	public HomeController() {
+	}
+	
+	 @FXML
+	 private AnchorPane pane1;
+
+	 @FXML
+	 private AnchorPane pane2;
+
+	 @FXML
+	 private AnchorPane pane3;
+	 
+	 public void translateAnimation (double duration, Node node, double width) {
+		 
+		 TranslateTransition translateTransition=new TranslateTransition(Duration.seconds(duration), node);
+		 translateTransition.setByX(width);
+		 translateTransition.play();
+	 }
+	 
+	 public void intialize(URL Location, ResourceBundle resources) {
+		translateAnimation(0.5,pane2,830);
+		translateAnimation(0.5,pane3,830);
+	 }
+	 
+	 int show = 0;
+	 
+	 @FXML
+	 void next(ActionEvent event){
+		 if (show==0) {
+			 translateAnimation(0.5,pane2,-830);
+			 show++;
+		 }else if (show==1) {
+			 translateAnimation(0.5,pane3,-830);
+			 show++;
+		 }
+	 }
+	 
+	 @FXML
+	 void back(ActionEvent event){
+		 if (show==1) {
+			 translateAnimation(0.5,pane2,830);
+			 show++;
+		 }else if (show==2) {
+			 translateAnimation(0.5,pane3,830);
+			 show++;
+		 }
+	 }
+	 
+	public void switchToProducts(MouseEvent event) {
+		
+		try {
+			SceneController.switchToScene("products");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+}
