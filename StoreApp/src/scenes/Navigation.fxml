@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane styleClass="menu-container" stylesheets="@styles/navigation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.MenuController">
    <children>
       <VBox alignment="CENTER" spacing="10.0" styleClass="menu-list" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -56,6 +55,27 @@
                <styleClass>
                   <String fx:value="menu-item" />
                   <String fx:value="products" />
+               </styleClass>
+            </Pane>
+            <Pane fx:id="checkout" onMouseClicked="#go" prefHeight="80.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="23.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/shipping.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="63.0" layoutY="27.0" mouseTransparent="true" prefHeight="25.0" prefWidth="90.0" text="Checkout">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="menu-item" />
+                  <String fx:value="cart" />
                </styleClass>
             </Pane>
             <Pane fx:id="logout" onMouseClicked="#go" prefHeight="80.0" prefWidth="150.0">

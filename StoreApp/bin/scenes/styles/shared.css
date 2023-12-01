@@ -1,0 +1,6 @@
+.top-header {
+	-fx-background-image: url("../../images/Top.png");
+	-fx-background-repeat: repeat-x;
+	-fx-background-size: auto 100%;
+	-fx-background-position: top left;
+}

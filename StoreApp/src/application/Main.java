@@ -12,6 +12,8 @@ public class Main extends Application {
 	 SceneController.setStage(stage);
 	 SceneController.addScene( "home", "home window.fxml"); //loads the scene of name and file type
 	 SceneController.addScene( "products", "products.fxml");
+	 SceneController.addScene( "checkout","checkOutWindow.fxml" );
+	 
 	 
 	 try {
 		 SceneController.switchToScene("home"); // change here set the starting page

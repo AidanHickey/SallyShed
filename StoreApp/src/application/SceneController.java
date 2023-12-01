@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 
 public class SceneController {
 
-		private static final String baseScenePath = "/scenes/";
+		public static final String baseScenePath = "/scenes/";
 		private static Stage stage;
 		private static Map<String, String> sceneFiles = new HashMap<String, String>();
  
