@@ -1,0 +1,33 @@
+.head-label {
+	-fx-border-color: #ab1502;
+	border-color: #ab1502;
+	-fx-border-width: 0 0 0 3px;
+	border-width: 0 0 0 3px;
+	-fx-padding: 0 0 0 5px;
+	padding: 0 0 0 5px;
+}
+
+.nav-btn-inv {
+	-fx-background-color: transparent;
+	background-color: transparent;
+	-fx-border-color: #000;
+	border-color: #000;
+	-fx-border-width: 0.5px;
+	border-width: 0.5px;
+	-fx-cursor: hand;
+	cursor: hand;
+	-fx-text-fill: #000;
+	-fx-font-size: 14px;
+	font-size: 14px;
+}
+
+.nav-btn-inv:hover {
+	-fx-background-color: #000;
+	background-color: #000;
+	-fx-text-fill: #fff;
+}
+
+.white-bg {
+	-fx-background-color: #fff;
+	background-color: #fff;
+}

@@ -111,10 +111,10 @@ public class MainFormController implements Initializable {
 		}
 	}
 	
-	private int ls_qty;
-	private int ss_qty;
-	private int r_qty;
-	private double total_price = 0;
+	public int ls_qty;
+	public int ss_qty;
+	public int r_qty;
+	public double total_price = 0;
 	
 	public void setLSQuantity() {
 		spin = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100,0);
@@ -198,14 +198,17 @@ public class MainFormController implements Initializable {
 	}
 	
 	public void purchaseBtn() {
-		total_price = 0;
-		checkout_subtotal.setText("$" + 0);
-		checkout_total.setText("$" + 0);
-		alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Information Message");
-		alert.setHeaderText(null);
-		alert.setContentText("Purchased!");
-		alert.showAndWait();
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("CreditCardForm.fxml"));
+			Stage stage = new Stage();
+			Scene scene = new Scene(root);
+			stage.setTitle("Credit Card Authorization");
+			stage.setScene(scene);
+			stage.showAndWait();
+			total_price = 0;
+			checkout_subtotal.setText("$" + 0);
+			checkout_total.setText("$" + 0);
+		} catch(Exception e) {e.printStackTrace();}
 	}
 
 	@Override
